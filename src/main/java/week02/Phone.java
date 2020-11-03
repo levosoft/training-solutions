@@ -3,8 +3,8 @@ package week02;
 import java.util.Scanner;
 
 public class Phone {
-    String type;
-    int mem;
+    private String type;
+    private int mem;
 
     public String getType() {
         return type;
