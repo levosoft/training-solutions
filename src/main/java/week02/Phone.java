@@ -35,6 +35,8 @@ public class Phone {
         String type = scanner.nextLine();
         System.out.println("Add meg a 1. telefon memóriáját: ");
         int mem = scanner.nextInt();
+        scanner.nextLine();
+
         Phone phone1 = new Phone(type, mem);
 
 
@@ -42,6 +44,8 @@ public class Phone {
         type = scanner.nextLine();
         System.out.println("Add meg a 2. telefon memóriáját: ");
         mem = scanner.nextInt();
+        scanner.nextLine();
+
         Phone phone2 = new Phone(type, mem);
 
     }
