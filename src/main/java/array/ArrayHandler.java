@@ -8,7 +8,7 @@ public class ArrayHandler {
     A fenti array.ArrayHandler osztályba implementálj egy újabb int find(int[] source, int itemToFind) metódust,
     mely visszaadja a paraméterként megadott érték indexét, ha benne van a tömbben, és -1-et, ha nincs benne!*/
 
-    boolean contains(int[] source, int itemToFind){
+    public boolean contains(int[] source, int itemToFind){
 
         for (int i: source){
             if(i == itemToFind){
@@ -18,7 +18,7 @@ public class ArrayHandler {
         return false;
     }
 
-    int find(int[] source, int itemToFind){
+    public int find(int[] source, int itemToFind){
         int index = -1;
         for (int i: source){
             index++;
