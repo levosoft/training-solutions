@@ -11,6 +11,6 @@ public class IntroControlMain {
         System.out.println(ic.describeNumber(111));
 
         System.out.println(ic.greetingToJoe("Joe"));
-        System.out.println(ic.greetingToJoe("Ernőbácsi"));
+        System.out.println(ic.greetingToJoe("Donald"));
     }
 }
