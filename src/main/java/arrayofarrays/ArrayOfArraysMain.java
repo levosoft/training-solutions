@@ -1,26 +1,36 @@
 package arrayofarrays;
 
 public class ArrayOfArraysMain {
+
     /*Hozz létre egy int[][] multiplicationTable(int size) metódust, mely a paraméterként megadott méretű szorzótáblát adja vissza! */
 
     public int[][] multiplicationTable(int size){
         int[][] mt = new int[size][size];
 
-        for (int i = 1; i <= size; i++) {
-            mt[i-1][i-1] = i;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                mt[i][j]=(i+1)*(j+1);
+            }
         }
-
         return mt;
     }
 
-    public void printArrayOfArrays(int[][] a){
 
+    /*Hozz létre egy printArrayOfArrays(int[][] a) metódust, mely kiír egy tömbök tömbjét!
+    A beágyazott tömbök elemeit egymás mellé, a külső tömb elemeit egymás alá.*/
+    
+    public void printArrayOfArrays(int[][] a){
+        for (int i[]: a){
+            for (int j: i){
+                System.out.print(j);
+            }
+        }
     }
 
     public static void main(String[] args) {
         ArrayOfArraysMain aa = new ArrayOfArraysMain();
-        aa.multiplicationTable(3);
 
+        aa.printArrayOfArrays(aa.multiplicationTable(3));
 
     }
 }
