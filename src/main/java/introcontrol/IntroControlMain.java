@@ -12,5 +12,18 @@ public class IntroControlMain {
 
         System.out.println(ic.greetingToJoe("Joe"));
         System.out.println(ic.greetingToJoe("Donald"));
+
+        System.out.println(ic.calculateBonus(1200000));
+
+        ic.printNumbers(20);
+        System.out.println();
+
+        ic.printNumbersBetween(13,33);
+        System.out.println();
+
+        ic.printNumbersBetweenAnyDirection(1, 9);
+        System.out.println();
+        ic.printNumbersBetweenAnyDirection(9, 1);
+
     }
 }

@@ -24,4 +24,49 @@ public class IntroControl {
             return "";
         }
     }
+
+    public int calculateBonus(int sale){
+        double bonus = 0;
+
+        if(sale > 1_000_000){
+            bonus = sale * 0.1;
+        }else{
+            bonus = 0;
+        }
+        return (int) bonus;
+    }
+
+    /*public int calculateConsumption(int prev, int next){
+
+    }*/
+
+    public void printNumbers(int max){
+        for (int i = 0; i <= max; i++) {
+            System.out.print(i + ", ");
+        }
+    }
+
+    public void printNumbersBetween(int min, int max){
+        for (int i = min; i <= max; i++) {
+            System.out.print(i + ", ");
+        }
+    }
+
+    public void printNumbersBetweenAnyDirection(int a, int b) {
+        if (b > a) {
+            for (int i = a; i <= b; i++) {
+                if (i > 0) {
+                    System.out.print(i % 2 == 0 ? i : " ");
+                }
+            }
+        } else {
+            for (int i = a; i >= b; i--) {
+                if (i > 0) {
+                    System.out.print(i % 2 == 0 ? i : " ");
+                }
+            }
+        }
+    }
+
+
 }
