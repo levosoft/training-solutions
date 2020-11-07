@@ -16,17 +16,17 @@ public class ArrayOfArraysMain {
 
     /*Hozz létre egy printArrayOfArrays(int[][] a) metódust, mely kiír egy tömbök tömbjét!
     A beágyazott tömbök elemeit egymás mellé, a külső tömb elemeit egymás alá.*/
-    public void printArrayOfArrays(int[][] a){
-        for (int i[]: a){
+    public void printArrayOfArrays(int[][] arAr){
+        for (int i[]: arAr){
             for (int j: i){
-                System.out.print(j);
+                System.out.print(j + " ");
             }
             System.out.println();
         }
     }
 
     public static void main(String[] args) {
-        ArrayOfArraysMain aa = new ArrayOfArraysMain();
-        aa.printArrayOfArrays(aa.multiplicationTable(10));
+        ArrayOfArraysMain aOa = new ArrayOfArraysMain();
+        aOa.printArrayOfArrays(aOa.multiplicationTable(10));
     }
 }
