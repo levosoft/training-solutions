@@ -68,5 +68,13 @@ public class IntroControl {
         }
     }
 
+    public void printOddNumbers(int max){
+        for (int i = 1; i <= max; i++) {
+            if (i % 2 != 0) {
+                System.out.print(i + ", ");
+            }
+        }
+    }
+
 
 }

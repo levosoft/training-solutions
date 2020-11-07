@@ -24,6 +24,9 @@ public class IntroControlMain {
         ic.printNumbersBetweenAnyDirection(1, 9);
         System.out.println();
         ic.printNumbersBetweenAnyDirection(9, 1);
+        System.out.println();
+
+        ic.printOddNumbers(15);
 
     }
 }
