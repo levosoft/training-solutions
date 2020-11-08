@@ -42,6 +42,31 @@ public class Office {
             System.out.println("Szélesség: " + this.meetingRooms.get(i).getWidth() + " m");
             System.out.println("Hosszúság: " + this.meetingRooms.get(i).getLength() + " m");
             System.out.print("Terület: " + this.meetingRooms.get(i).getArea(this.meetingRooms.get(i).getLength(), this.meetingRooms.get(i).getWidth()) + " m2");
+            System.out.println();
+        }
+    }
+
+    public void printMeetingRoomsWithName(String name){
+        System.out.println("Találat azonos nevű tárgyalóra:");
+
+        for(int i = 0; i < this.meetingRooms.size(); i++){
+            if(name.equals(this.meetingRooms.get(i).getName())){
+                System.out.print(this.meetingRooms.get(i).getName());
+            }
+        }
+    }
+
+    public void printMeetingRoomsContains(String part){
+        System.out.println("Találat töredék nevű tárgyalóra:");
+
+        for(int i = 0; i < this.meetingRooms.size(); i++){
+            if(this.meetingRooms.get(i).getName().contains(part)){
+                System.out.println("Név: " + this.meetingRooms.get(i).getName());
+                System.out.println("Szélesség: " + this.meetingRooms.get(i).getWidth() + " m");
+                System.out.println("Hosszúság: " + this.meetingRooms.get(i).getLength() + " m");
+                System.out.print("Terület: " + this.meetingRooms.get(i).getArea(this.meetingRooms.get(i).getLength(), this.meetingRooms.get(i).getWidth()) + " m2");
+                System.out.println();
+            }
         }
     }
 
