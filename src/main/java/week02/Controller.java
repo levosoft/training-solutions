@@ -7,6 +7,7 @@ public class Controller {
 
 
     public static void main(String[] args) {
+        System.out.println();
         System.out.println("<<< OFFICE CONTROL SYSTEM >>>");
         System.out.println();
 
@@ -23,21 +24,22 @@ public class Controller {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Add meg, hogy hány db tárgyalót szeretnél rögzíteni a rendszerben:");
         numberOfMeetingrooms = scanner.nextInt();
-        System.out.println();
+        scanner.nextLine();
         office = new Office();
 
-        for (int i = 0; i <= numberOfMeetingrooms; i++) {
+        for (int i = 1; i <= numberOfMeetingrooms; i++) {
 
             System.out.println("Add meg a tárgyaló nevét:");
+            //scanner.nextLine();
             name = scanner.nextLine();
 
             System.out.println("Add meg a tárgyaló szélességét:");
             width = scanner.nextInt();
-            System.out.println();
+            scanner.nextLine();
 
             System.out.println("Add meg a tárgyaló hosszát:");
             length = scanner.nextInt();
-            System.out.println();
+            scanner.nextLine();
 
             MeetingRoom meetingRoom = new MeetingRoom(name, length, width);
             office.addMeetingRoom(meetingRoom);
@@ -47,6 +49,7 @@ public class Controller {
     }
 
     public static void printMenu(){
+        System.out.println();
         System.out.println("==================================");
         System.out.println("              MENÜ                ");
         System.out.println("1. Tárgyalók sorrendben");
@@ -64,7 +67,7 @@ public class Controller {
     public static void runMenu(){
         Scanner scanner = new Scanner(System.in);
         int nr = scanner.nextInt();
-        System.out.println();
+        scanner.nextLine();
 
         if(nr == 1){
             office.printNames();
@@ -85,7 +88,7 @@ public class Controller {
         }else if(nr == 7){
             System.out.println("Add meg a keresett területet:");
             int area = scanner.nextInt();
-            System.out.println();
+            scanner.nextLine();
             office.printAreasLargerThan(area);
         }
 

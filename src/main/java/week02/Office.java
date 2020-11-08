@@ -21,7 +21,7 @@ public class Office {
     public void printNamesReverse(){
         System.out.println("A tárgyalók nevei (fordított sorrendben):");
 
-        for(int i = this.meetingRooms.size(); i < 0; i--){
+        for(int i = this.meetingRooms.size()-1; i >= 0; i--){
             System.out.print(this.meetingRooms.get(i).getName() + ", ");
         }
     }
