@@ -70,5 +70,22 @@ public class Office {
         }
     }
 
+    public void printAreasLargerThan(int area){
+        System.out.println("Találat nagyobb területű tárgyalókra:");
+        int calculatedArea;
+
+        for(int i = 0; i < this.meetingRooms.size(); i++){
+
+            calculatedArea = this.meetingRooms.get(i).getWidth() * this.meetingRooms.get(i).getLength();
+
+            if(calculatedArea > area){
+                System.out.println("Név: " + this.meetingRooms.get(i).getName());
+                System.out.println("Szélesség: " + this.meetingRooms.get(i).getWidth() + " m");
+                System.out.println("Hosszúság: " + this.meetingRooms.get(i).getLength() + " m");
+                System.out.print("Terület: " + this.meetingRooms.get(i).getArea(this.meetingRooms.get(i).getLength(), this.meetingRooms.get(i).getWidth()) + " m2");
+                System.out.println();
+            }
+        }
+    }
 
 }
