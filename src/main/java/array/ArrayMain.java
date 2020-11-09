@@ -1,5 +1,8 @@
 package array;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class ArrayMain {
     public static void main(String[] args) {
         //Definiálj egy String tömböt a hét napjaival! Írd ki a második elemét (kedd)! Írd ki a tömb hosszát is!
