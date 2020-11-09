@@ -25,8 +25,24 @@ public class ArrayOfArraysMain {
         }
     }
 
+    /*Hozz létre egy int[][] triangularMatrix(int size) metódust, mely a paraméterként megadott méretű háromszögmátrixot hozza létre,
+    és minden sora a sor számának értékeit tartalmazza!
+    public int[][] triangularMatrix(int size){
+        int[][] triangular = new int[size][];
+
+        for (int i = 0; i < triangular.length ; i++) {
+            triangular[size][i] = i;
+        }
+
+        return triangular;
+    }*/
+
     public static void main(String[] args) {
         ArrayOfArraysMain aOa = new ArrayOfArraysMain();
         aOa.printArrayOfArrays(aOa.multiplicationTable(10));
+
+        //aOa.printArrayOfArrays(aOa.triangularMatrix(5));
     }
+
+
 }
