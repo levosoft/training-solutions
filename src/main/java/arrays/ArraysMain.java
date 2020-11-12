@@ -9,6 +9,12 @@ public class ArraysMain {
         ArraysMain arraysMain = new ArraysMain();
 
         System.out.println(arraysMain.numberOfDaysAsString());
+        System.out.println(arraysMain.daysOfWeek());
+        System.out.println(arraysMain.multiplicationTableAsString(4));
+
+        double[] day1temps = {13.5, 14.6, 13.9};
+        double[] day2temps = {14.3, 15.4, 14.9};
+        System.out.println(arraysMain.sameTempValues(day1temps, day2temps));
     }
 
     public String numberOfDaysAsString(){
@@ -46,4 +52,7 @@ public class ArraysMain {
         return Arrays.deepToString(mt);
     }
 
+    public boolean sameTempValues(double[] day, double[] anotherDay){
+        return Arrays.equals(day, anotherDay);
+    }
 }
