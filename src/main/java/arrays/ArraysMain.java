@@ -1,8 +1,15 @@
 package arrays;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class ArraysMain {
+
+    public static void main(String[] args) {
+        ArraysMain arraysMain = new ArraysMain();
+
+        System.out.println(arraysMain.numberOfDaysAsString());
+    }
 
     public String numberOfDaysAsString(){
         /*int[] numberOfDays = new int[12];
@@ -24,10 +31,19 @@ public class ArraysMain {
         return Arrays.toString(numberOfDays);
     }
 
-    public static void main(String[] args) {
-        ArraysMain arraysMain = new ArraysMain();
+    public List<String> daysOfWeek(){
+        return Arrays.asList("hétfő", "kedd", "szerda", "csütörtök", "péntek", "szombat", "vasárnap");
+    }
 
-        System.out.println(arraysMain.numberOfDaysAsString());
+    public String multiplicationTableAsString(int size){
+        int[][] mt = new int[size][size];
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                mt[i][j]=(i+1)*(j+1);
+            }
+        }
+        return Arrays.deepToString(mt);
     }
 
 }
