@@ -33,8 +33,8 @@ public class Capsules {
     }
 
     public void removeLast(){
-        int lastIndex = capsules.size();
-        capsules.remove(lastIndex-1);
+        int lastIndex = capsules.size() - 1;
+        capsules.remove(lastIndex);
     }
 
     public List<String> getColors(){
