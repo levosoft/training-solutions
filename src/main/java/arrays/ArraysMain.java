@@ -15,6 +15,12 @@ public class ArraysMain {
         double[] day1temps = {13.5, 14.6, 13.9};
         double[] day2temps = {14.3, 15.4, 14.9};
         System.out.println(arraysMain.sameTempValues(day1temps, day2temps));
+
+        int[] firstNumbers = {1,2,3,4,5};
+        int[] secondNumbers = {1,2,3,4,5};
+        int[] thirdNumbers = {6,7,8,9,10};
+        System.out.println(arraysMain.wonLottery(firstNumbers, secondNumbers));
+        System.out.println(arraysMain.wonLottery(firstNumbers, thirdNumbers));
     }
 
     public String numberOfDaysAsString(){
@@ -54,5 +60,11 @@ public class ArraysMain {
 
     public boolean sameTempValues(double[] day, double[] anotherDay){
         return Arrays.equals(day, anotherDay);
+    }
+
+    public boolean wonLottery(int[] ownNumbers, int[] winnerNumbers){
+        Arrays.sort(ownNumbers, 0, ownNumbers.length);
+        Arrays.sort(winnerNumbers, 0, winnerNumbers.length);
+        return Arrays.equals(ownNumbers, winnerNumbers);
     }
 }
