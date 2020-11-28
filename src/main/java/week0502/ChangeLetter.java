@@ -1,4 +1,4 @@
-package week05;
+package week0502;
 
 public class ChangeLetter {
 
