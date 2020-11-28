@@ -24,4 +24,32 @@ public class ListCounterTest {
         //Then
         assertEquals(3, x);
     }
+
+    @Test
+    void test2(){
+
+        //Given
+        ListCounter lc = new ListCounter();
+        List<String> myList = new ArrayList<>();
+
+        //When
+        int x = lc.counter(myList);
+
+        //Then
+        assertEquals(0, x);
+    }
+
+    @Test
+    void test3(){
+
+        //Given
+        ListCounter lc = new ListCounter();
+        List<String> myList = Arrays.asList("Bacardi Black", "Sprite", "őszilé");
+
+        //When
+        int x = lc.counter(myList);
+
+        //Then
+        assertEquals(0, x);
+    }
 }
