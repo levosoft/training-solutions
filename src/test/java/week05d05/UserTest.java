@@ -14,10 +14,10 @@ public class UserTest {
         User user = new User("Giovanni", "Gatto", "ggatto@catsyndicate.com");
 
         //When
-        String useremail = user.getEmail();
+        String fullname = user.getFullName();
 
         //Then
-        assertEquals("ggatto@catsyndicate.com", useremail);
+        assertEquals("Giovanni Gatto", fullname);
     }
 
     @Test
@@ -29,4 +29,15 @@ public class UserTest {
 
         assertEquals("Nem megfelelő e-mail cím!", ex.getMessage());
     }
+
+    @Test
+    void test3(){
+
+        Exception ex = assertThrows(IllegalArgumentException.class, () -> {
+            new User("Giovanni", "Gatto", "ggatto@catsyndicatecom");
+        });
+
+        assertEquals("Nem megfelelő e-mail cím!", ex.getMessage());
+    }
+
 }
