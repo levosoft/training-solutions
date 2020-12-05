@@ -25,12 +25,21 @@ public class ListSelectorTest {
     @Test
     void test2(){
         ListSelector ls = new ListSelector();
-        List<String> myFalseList = new ArrayList<>();
+        List<String> myEmptyList = new ArrayList<>();
+
+        assertEquals("", ls.myStringBuilder(myEmptyList));
+    }
+
+    @Test
+    void test3(){
+        ListSelector ls = new ListSelector();
+        List<String> myNullList = new ArrayList<>();
+        myNullList.add(null);
 
         Exception ex = assertThrows(IllegalArgumentException.class, () -> {
-            ls.myStringBuilder(myFalseList);
+            ls.myStringBuilder(myNullList);
         });
 
-        assertEquals("Üres lista!", ex.getMessage());
+        assertEquals("Null!", ex.getMessage());
     }
 }
