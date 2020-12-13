@@ -1,8 +1,11 @@
-package week02;
+package week02d02;
 
 import java.util.Scanner;
 
 public class Phone {
+    /*Írj egy Phone osztályt, type (String) és mem (int) attribútumokkal! Generálj konstruktort, gettert és settert!
+    Írj bele egy main metódust, amivel példányosítasz egy osztályt, és kiírod az attribútumok értékeit!*/
+
     private String type;
     private int mem;
 

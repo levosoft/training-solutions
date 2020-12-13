@@ -1,6 +1,11 @@
-package week02;
+package week02d03;
 
 public class Product {
+
+    /*Írj egy Product oszályt String name és String code attribútumokkal! Legyen egy konstruktora a két attribútummal!
+    Legyen egy areTheyEqual() metódusa, mely kap egy másik Product példányt, és eldönti, hogy azonos-e az adott példánnyal. Két termék akkor egyezik, ha a nevük megegyezik.
+    Bónusz: szigorúbb egyelőség a feltételre: a két termék kódjának hosszának különbsége maximum egy karakter lehet.*/
+
     private String name;
     private String code;
 
