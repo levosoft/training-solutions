@@ -1,6 +1,6 @@
 package week08d04;
 
-public class TrainerMain {
+public class Main {
 
     /*Hozz létre egy CanMark interfészt egy int giveMark() metódussal! Ez azt jelenti, hogy valaki tud osztályzatot adni.
     Ennek legyen két implementációja, egy GoodMood osztály, mely mindig 5 értéket ad vissza, és egy BadMood osztály, mely mindig 3 értéket ad vissza!
@@ -11,7 +11,11 @@ public class TrainerMain {
 
     public static void main(String[] args) {
 
-        //Trainer trainer = new Trainer(GoodMood);
+        Trainer trainerInGoodMood = new Trainer(new GoodMood());
+        Trainer trainerInBadMood = new Trainer(new BadMood());
+
+        System.out.println(trainerInGoodMood.giveMark());
+        System.out.println(trainerInBadMood.giveMark());
 
     }
 }

@@ -8,8 +8,12 @@ public class Trainer {
         this.canMark = canMark;
     }
 
-    public int giveMark(CanMark canMark){
-        int mark = canMark.giveMark();
-        return mark;
+    public int giveMark(){
+        //int mark = canMark.giveMark();
+        //return mark;
+
+        return canMark.giveMark();
     }
+
+
 }
