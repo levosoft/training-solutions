@@ -17,5 +17,9 @@ public class Main {
         System.out.println(trainerInGoodMood.giveMark());
         System.out.println(trainerInBadMood.giveMark());
 
+        //A setMood-metódus működése
+        trainerInGoodMood.setMood(new BadMood());
+        System.out.println(trainerInGoodMood.giveMark());
+
     }
 }
