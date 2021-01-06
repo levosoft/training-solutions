@@ -12,16 +12,15 @@ public class ArraySelector {
             evens = "[" + intArray[0] + "]";
             return evens;
         }else {
-            evens = "[";
 
             for (int i = 0; i < intArray.length; i++) {
                 if(i % 2 == 0){
-                    evens = evens + ", " + intArray[i] ;
+                    evens = evens + intArray[i] ;
                 }
             }
-            evens = evens + "]";
-            return evens;
 
+            evens = "[" + evens + "]";
+            return evens;
         }
     }
 }
