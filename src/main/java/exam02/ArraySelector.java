@@ -19,7 +19,8 @@ public class ArraySelector {
                 }
             }
 
-            evens.substring(0, evens.length() - 2);
+            evens = evens.substring(0, evens.length() - 2);
+
             evens = "[" + evens + "]";
             return evens;
         }
