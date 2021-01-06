@@ -15,10 +15,11 @@ public class ArraySelector {
 
             for (int i = 0; i < intArray.length; i++) {
                 if(i % 2 == 0){
-                    evens = evens + intArray[i] ;
+                    evens = evens + intArray[i] + ", ";
                 }
             }
 
+            evens.substring(0, evens.length() - 2);
             evens = "[" + evens + "]";
             return evens;
         }
