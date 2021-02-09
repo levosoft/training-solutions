@@ -24,6 +24,7 @@ public class NameWriter {
             try {
                 BufferedWriter writer = Files.newBufferedWriter(file, StandardOpenOption.APPEND);   //A létező fájl végére írok (új sorba)
                 writer.write(name + "\n");                                                      //Nem írja be az átadott Stringet?!
+                writer.close();
             }
             catch (IOException ioe) {
                 throw new IllegalStateException("Can not write file", ioe);
@@ -32,6 +33,7 @@ public class NameWriter {
             try{
                 BufferedWriter writer = Files.newBufferedWriter(file);                              //Létrehozom a fájlt és beleírok
                 writer.write(name + "\n");                                                      //Nem írja be az átadott Stringet?!
+                writer.close();
             }catch (IOException ioe){
                 throw new IllegalStateException("Can not write file", ioe);
             }
