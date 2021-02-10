@@ -12,6 +12,15 @@ public class NameWriterTest {
         Path file = Path.of("names.txt");
         NameWriter nw = new NameWriter(file);
 
-        nw.addAndWrite("Lukács Levente");
+        nw.addAndWrite("John Doe");
+    }
+
+    @Test
+    public void test2(){
+
+        Path file = Path.of("names.txt");
+        NameWriter nw = new NameWriter(file);
+
+        nw.addAndWrite("Jane Doe");
     }
 }
