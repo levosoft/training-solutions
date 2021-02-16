@@ -8,6 +8,9 @@ import java.util.List;
 
 public class CityStatistic {
 
+    /*A GitHubon a `iranyitoszamok-varosok-2021.csv` fájl tartalmazza a magyar városok listáját.
+    Add vissza a leghosszabb nevű várost!*/
+
     public String getLongestCityName(BufferedReader reader){
 
         String line;
