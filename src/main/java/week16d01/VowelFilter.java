@@ -10,6 +10,9 @@ import java.util.List;
 
 public class VowelFilter {
 
+    /*Írj egy VowelFilter.filterFowels(BufferedReader reader) metódust, mely beolvas egy
+    fájlt soronként, kiszűri belőle a magánhangzókat, és visszaadja egy String-ként.*/
+
     private Path file2 = Path.of("vowelfilteredfile.txt");
 
     public String filterVowels(BufferedReader reader){
