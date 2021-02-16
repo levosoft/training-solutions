@@ -19,7 +19,7 @@ public class CityStatistic {
 
         try(reader){
             while ((line = reader.readLine()) != null){
-                Arrays.fill(cityDatas, null);
+                //Arrays.fill(cityDatas, null);                     //Nem kell üríteni, mert alapból újra feltölti minden iterációban
                 cityDatas = line.split(";");
                 temporaryCityName = cityDatas[1];
                 temporarySize = temporaryCityName.trim().length();
