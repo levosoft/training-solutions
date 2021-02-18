@@ -1,8 +1,8 @@
-package week16d01;
+package week16d01.histogram;
 
 import org.junit.jupiter.api.Test;
+import week16d01.histogram.VowelFilter;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;

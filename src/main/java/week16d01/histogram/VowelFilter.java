@@ -1,4 +1,4 @@
-package week16d01;
+package week16d01.histogram;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
