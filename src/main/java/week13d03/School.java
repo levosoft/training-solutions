@@ -29,4 +29,9 @@ public class School {
     public int getHours() {
         return hours;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }
