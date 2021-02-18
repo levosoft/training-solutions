@@ -1,4 +1,4 @@
-package week16d01;
+package week16d01.histogram;
 
 import org.junit.jupiter.api.Test;
 
