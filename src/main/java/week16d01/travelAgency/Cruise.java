@@ -36,18 +36,20 @@ public class Cruise {
     }
 
     public void bookPassenger(Passenger passenger){
-
+        if (boat.getMaxPassengers() == passengers.size()){
+            throw new IllegalArgumentException("Overbooking!");
+        }
         passengers.add(passenger);
     }
 
     public double getPriceForPassenger(Passenger passenger){
-
-        return 0.0;
+        double price = passenger.getCruiseClass().getMultiplier() * basicPrice;
+        return price;
     }
 
     public Passenger findPassengerByName(String name){
 
-        Passenger findedPassenger = null;
+        Passenger findedPassenger = null;       //Nem null-t kell dobni, hanem inkább exception-t
 
         for (Passenger p : passengers){
             if(p.getName().equals(name)){
@@ -66,11 +68,16 @@ public class Cruise {
 
     public double sumAllBookingsCharged(){
 
-        return 0.0;
+        double sum = 0.0;
+        for (Passenger passenger : passengers){
+            sum += getPriceForPassenger(passenger);
+        }
+        return sum;
     }
 
-   /* public Map<CruiseClass, Integer> countPassengerByClass(){
 
-
-    }*/
+//    public Map<CruiseClass, Integer> countPassengerByClass() {
+//
+//
+//    }
 }

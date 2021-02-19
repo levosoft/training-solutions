@@ -26,10 +26,6 @@ public class CruiseTest {
     void bookPassenger() {
         cruise.bookPassenger(new Passenger("John Doe", CruiseClass.LUXURY));
 
-        Passenger passenger = new  Passenger("John Doe", CruiseClass.LUXURY);
-        System.out.println(passenger.hashCode());
-        System.out.println(passenger.toString());
-
         assertEquals(1, cruise.getPassengers().size());
         assertEquals("John Doe", cruise.getPassengers().get(0).getName());
     }
@@ -84,7 +80,7 @@ public class CruiseTest {
         assertEquals(300_000 + 180_000 + 100_000, sum, 0.5);
     }
 
-    /*
+
     @Test
     void countPassengerByClass() {
         cruise.bookPassenger(new Passenger("Jack Smith", CruiseClass.LUXURY));
@@ -93,5 +89,5 @@ public class CruiseTest {
 
         Map<CruiseClass, Integer> result = cruise.countPassengerByClass();
         assertEquals(Map.of(CruiseClass.LUXURY, 2 , CruiseClass.FIRST, 1), result);
-    }*/
+    }
 }
