@@ -1,10 +1,7 @@
 package week16d01.travelAgency;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Cruise {
 
@@ -61,9 +58,15 @@ public class Cruise {
     }
 
     public List<String> getPassengerNamesOrdered(){
+        List<String> names = new ArrayList<>();
 
-        List<String> list = List.of("p1", "p2");
-        return list;
+        for (Passenger passenger : passengers){
+            names.add(passenger.getName());
+        }
+
+        Collections.sort(names);
+
+        return names;
     }
 
     public double sumAllBookingsCharged(){
@@ -76,8 +79,16 @@ public class Cruise {
     }
 
 
-//    public Map<CruiseClass, Integer> countPassengerByClass() {
-//
-//
-//    }
+    public Map<CruiseClass, Integer> countPassengerByClass() {
+        Map<CruiseClass, Integer> counts = new HashMap<>();
+        for (Passenger passenger : passengers) {
+            if (!counts.containsKey(passenger.getCruiseClass())) {
+                counts.put(passenger.getCruiseClass(), 1);
+            }
+            else {
+                counts.put(passenger.getCruiseClass(), counts.get(passenger.getCruiseClass()) + 1);
+            }
+        }
+        return counts;
+    }
 }
