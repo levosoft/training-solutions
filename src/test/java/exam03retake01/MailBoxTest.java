@@ -59,17 +59,17 @@ public class MailBoxTest {
 
     }
 
-    @Test
-    void findSubject() {
-        List<Mail> mails =  mailBox.findByCriteria("Hi");
-        assertEquals(2, mails.size());
-
-    }
-
-    @Test
-    void findMessage() {
-        List<Mail> mails =  mailBox.findByCriteria("Rerere");
-        assertEquals(1, mails.size());
-
-    }
+//    @Test
+//    void findSubject() {
+//        List<Mail> mails =  mailBox.findByCriteria("Hi");
+//        assertEquals(2, mails.size());
+//
+//    }
+//
+//    @Test
+//    void findMessage() {
+//        List<Mail> mails =  mailBox.findByCriteria("Rerere");
+//        assertEquals(1, mails.size());
+//
+//    }
 }
