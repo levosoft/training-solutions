@@ -19,21 +19,30 @@ public class MailBox {
     public List<Mail> findByCriteria(String s) {
         List<Mail> fromList = new ArrayList<>();
 
-        if(s.substring(0,5).equals("from:")){
+        if (s.contains("from:") || s.contains("to:")){
+            if(s.substring(0,5).equals("from:")){
+                for (Mail m : mails){
+                    if (s.equals("from:" + m.getFrom().getEmail())){
+                        fromList.add(m);
+                    }
+                }
+
+            }else if(s.substring(0,3).equals("to:")){
+                for (Mail m : mails){
+                    if (s.equals("to:" + m.getFrom().getName())){
+                        fromList.add(m);
+                    }
+                }
+
+            }
+        }else{
             for (Mail m : mails){
-                if (s.equals("from:" + m.getFrom().getEmail())){
+                if (m.getSubject().contains(s) || m.getMessage().contains(s)){
                     fromList.add(m);
                 }
             }
-
-        }else if(s.substring(0,3).equals("to:")){
-            for (Mail m : mails){
-                if (s.equals("to:" + m.getFrom().getName())){
-                    fromList.add(m);
-                }
-            }
-
         }
+
         return fromList;
     }
 }
