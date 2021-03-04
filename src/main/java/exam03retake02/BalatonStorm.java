@@ -2,6 +2,7 @@ package exam03retake02;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -26,7 +27,7 @@ public class BalatonStorm {
                     }
                 }
             }
-            Collections.sort(stationList);
+            Collections.sort(stationList, Collator.getInstance());
             return stationList;
         }
         catch (IOException ioe){
