@@ -2,12 +2,17 @@ package sajatgyak;
 
 import exam03retake02.State;
 import exam03retake02.Todo;
+import org.mariadb.jdbc.MariaDbDataSource;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.text.Collator;
 import java.util.*;
+import java.sql.*;
 
 public class Practice {
 
@@ -16,6 +21,7 @@ public class Practice {
 
 
     public static void main(String[] args) {
+
 
         //Lista rendezése ABC-sorrendben (helyi beállításoknak megfelelően)
         List<String> nevek = Arrays.asList("Cecil", "Ádám", "Béla");
