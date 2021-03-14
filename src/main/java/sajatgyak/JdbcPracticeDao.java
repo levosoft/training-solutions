@@ -32,7 +32,7 @@ public class JdbcPracticeDao {
     }
 
 
-    //SELECT
+    //SELECT - Paraméter nélkül!
     public List<String> listEmployeeNames(){
         try (
                 Connection conn = dataSource.getConnection();
@@ -52,25 +52,29 @@ public class JdbcPracticeDao {
     }
 
 
+    //SELECT - Paraméterrel!
     public String findEmployeeNameById(long id){
         try (
                 Connection conn = dataSource.getConnection();
-                PreparedStatement ps = conn.prepareStatement("SELECT emp_name FROM employees WHERE id = ?");
+                PreparedStatement pst = conn.prepareStatement("SELECT emp_name FROM employees WHERE id = ?");
         ){
-            ps.setLong(1, id);
+            pst.setLong(1, id);
 
-            return selectNameByPreparedStatement(ps);
+            //A ResultSet külön metódusba van kiszervezve! -> Külön try-with resourcesben kell kezelni a ResultSet lezárását!!!
+            return selectNameByPreparedStatement(pst);
         }
         catch (SQLException se){
             throw new IllegalStateException("Cannot query", se);
         }
     }
 
-    private String selectNameByPreparedStatement(PreparedStatement ps) {
-        try (ResultSet rs = ps.executeQuery()) {
-                if(rs.next()) {
-                    String name = rs.getString("emp_name");
-                    return name;
+    private String selectNameByPreparedStatement(PreparedStatement pst) {
+        try (
+                ResultSet rs = pst.executeQuery()
+        ) {
+            if(rs.next()) {
+                String name = rs.getString("emp_name");
+                return name;
             }
             throw new IllegalArgumentException("Not found");
         }catch (SQLException sqle){
