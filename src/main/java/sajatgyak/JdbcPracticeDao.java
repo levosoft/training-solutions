@@ -19,10 +19,9 @@ public class JdbcPracticeDao {
 
     //INSERT
     public void createEmployee(String name){
-        try (
-                Connection conn = dataSource.getConnection();
-                PreparedStatement ps =
-                        conn.prepareStatement("INSERT INTO employees(emp_name) VALUES (?)")){
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement ps = conn.prepareStatement("INSERT INTO employees(emp_name) VALUES (?)"))
+        {
             ps.setString(1,name);
             ps.executeUpdate();
         } catch (
