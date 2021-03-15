@@ -29,8 +29,14 @@ public class JdbcPracticeMain {
 
 
         //Flyway futtatása (43'30")
-        Flyway flyway = Flyway.configure().dataSource(dataSource).load();
+        //Flyway flyway = Flyway.configure().dataSource(dataSource).load();
 
+        Flyway flyway = Flyway.configure()
+                .locations("/db/migration/sajatgyak")
+                .dataSource(dataSource)
+                .load();
+        flyway.clean();
+        flyway.migrate();
         flyway.clean();
         flyway.migrate();
 
