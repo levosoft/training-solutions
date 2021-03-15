@@ -16,17 +16,36 @@ public class ActivityDao {
     }
 
 
-    //INSERT
-    public void insertActivity(Activity activity){
+    //INSERT - Generált azonosító lekérdezésével
+    public Activity insertActivity(Activity activity){
         try (Connection conn = dataSource.getConnection();
-             PreparedStatement ps = conn.prepareStatement("INSERT INTO activities(start_time, activity_desc, activity_type) VALUES (?,?,?)"))
+             PreparedStatement pst = conn.prepareStatement("INSERT INTO activities(start_time, activity_desc, activity_type) VALUES (?,?,?)", Statement.RETURN_GENERATED_KEYS))
         {
-            ps.setTimestamp(1, Timestamp.valueOf(activity.getStartTime()));
-            ps.setString(2, activity.getDesc());
-            ps.setString(3, activity.getType().toString());
-            ps.executeUpdate();
+            pst.setTimestamp(1, Timestamp.valueOf(activity.getStartTime()));
+            pst.setString(2, activity.getDesc());
+            pst.setString(3, activity.getType().toString());
+            pst.executeUpdate();
+
+            //Új metódusba kiszervezve, aminek átadom az insertált Activity-t és az visszaadja ugyanezt az Activity-t csak már a generált id-jával!
+            return executeAndGetGeneratedKey(pst, activity);
+
         } catch (SQLException se){
             throw new IllegalStateException("Can not insert", se);
+        }
+    }
+
+    //Generált id-megkapása getGeneratedKeys metódussal
+    private Activity executeAndGetGeneratedKey(PreparedStatement stmt, Activity activity) {
+        try (
+                ResultSet rs = stmt.getGeneratedKeys()) {
+            if (rs.next()) {
+                long id = rs.getLong(1);
+                return new Activity(id, activity.getStartTime(), activity.getDesc(), activity.getType());
+            } else {
+                throw new SQLException("No key has generated");
+            }
+        } catch (SQLException sqle) {
+            throw new IllegalArgumentException("Error by insert", sqle);
         }
     }
 

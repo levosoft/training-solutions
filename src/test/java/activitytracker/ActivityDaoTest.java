@@ -67,4 +67,12 @@ public class ActivityDaoTest {
         System.out.println(activityDao.selectActivityBeforeDate(LocalDate.of(2020,3,15)));
     }
 
+    @Test
+    public void findByIdTest(){
+        Activity activity = new Activity(LocalDateTime.of(2021, 03,14, 21,44), "Biking by Lake Velencei", ActivityType.BIKING);
+        Activity result = activityDao.insertActivity(activity);
+
+        assertEquals("Biking by Lake Velencei", activityDao.selectById(result.getId()).getDesc());
+    }
+
 }
