@@ -3,7 +3,7 @@ package week20d02;
 public class Software {
 
     private String name;
-    private double price;
+    protected double price;
 
     public Software(String name, double price) {
         this.name = name;
@@ -21,12 +21,6 @@ public class Software {
     public void increasePrice(){
         double multiplier = 1.0;
 
-        if (this.getClass().getSimpleName().equals("OfficeSoftware")){
-            multiplier = 1.05;
-        }
-        if (this.getClass().getSimpleName().equals("DeveloperSoftware")){
-            multiplier = 1.1;
-        }
         price = price * multiplier;
     }
 }

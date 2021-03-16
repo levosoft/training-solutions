@@ -2,8 +2,6 @@ package week20d02;
 
 public class DeveloperSoftware extends Software{
 
-    //double price = super.getPrice();
-
     public DeveloperSoftware(String name, double price) {
         super(name, price);
     }
@@ -13,5 +11,8 @@ public class DeveloperSoftware extends Software{
         return super.getPrice();
     }
 
-
+    @Override
+    public void increasePrice() {
+        price = price * 1.1;
+    }
 }
