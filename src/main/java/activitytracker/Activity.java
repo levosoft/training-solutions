@@ -1,6 +1,8 @@
 package activitytracker;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Activity {
 
@@ -8,6 +10,7 @@ public class Activity {
     private LocalDateTime startTime;
     private String desc;
     private ActivityType type;
+
 
     //Konstruktor az INSERT-hez
     public Activity(LocalDateTime startTime, String desc, ActivityType type) {
@@ -24,6 +27,7 @@ public class Activity {
         this.type = type;
     }
 
+
     public long getId() {
         return id;
     }
@@ -39,6 +43,7 @@ public class Activity {
     public ActivityType getType() {
         return type;
     }
+
 
     @Override
     public String toString() {
